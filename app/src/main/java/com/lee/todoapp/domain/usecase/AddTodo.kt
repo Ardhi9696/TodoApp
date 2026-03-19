@@ -6,7 +6,5 @@ import com.lee.todoapp.domain.repository.TodoRepository
 class AddTodo(
     private val repository: TodoRepository
 ) {
-    suspend operator fun invoke(todo: Todo) {
-        repository.addTodo(todo)
-    }
+    suspend operator fun invoke(todo: Todo) = repository.insertTodo(todo)
 }
